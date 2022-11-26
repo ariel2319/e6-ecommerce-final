@@ -5,7 +5,10 @@
   --secondary-bgcolor: ghostwhite;
   --tertiary-bgcolor: #ff0057;
   --main-shadow: 0 10px 30px rgba(0,0,0,0.8);
-  --secondary-shadow: 0 10px 15px rgba(0,0,0, 0.4)
+  --secondary-shadow: 0 10px 15px rgba(0,0,0, 0.4);
+  --add-color: #41d7a7;
+  --del-color: crimson;
+  --edit-color: yellow;
 }
 
 *{
@@ -112,4 +115,10 @@ body{
   100% {
     opacity: 0;
   }
+}
+
+/* ***** HOME ***** */
+.container-product{
+  display: flex;
+  border: 1px solid greenyellow;
 }

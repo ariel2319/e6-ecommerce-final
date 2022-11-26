@@ -1,57 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingScreen from '../components/LoadingScreen';
-import { getNewProductThunk } from '../store/slice/productStore.slice';
-import Table from 'react-bootstrap/Table';
+import { filterProductsThunks, getNewProductThunk } from '../store/slice/productStore.slice';
 import CardProduct from '../components/CardProduct';
-
+import '../STYLES/styles.css'
+import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 const Home = () => {
 
   const dispatch = useDispatch()
   const products = useSelector(state => state.product)
-  const pictures = useSelector(state => state.product.productImgs)
+
+  const [ categoriesList, setCategoriesList ] = useState ([])
 
   useEffect(() => {
     dispatch(getNewProductThunk())
-  }, [])
 
+    axios
+    .get(`https://e-commerce-api.academlo.tech/api/v1/products/categories`)
+    .then(res => setCategoriesList(res.data.data.categories))
+  }, [])
+console.log('list cat',categoriesList)
 
   return (
     <div>
       <h1> Home Page</h1>
+<div className="categories-container">
+{
+  categoriesList.map(catList=>(
+      <Button onClick={()=>dispatch(filterProductsThunks(catList.id))} /* onClick={()=>} */>
+      {catList.name}
+      </Button>
+  ))
+}
 
-      <CardProduct />
-
-      {/* <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Status</th>
-            <th>Img</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-
-            <tr key={product.id}>
-              <td>{product.id}</td>
-              <td>{product.title}</td>
-              <td>{product.description}</td>
-              <td>{product.category.name}</td>
-              <td>${product.price}</td>
-              <td>{product.status}</td>
-              <td><img src={product.productImgs[0]} style={{ width: '150px', height: '150px' }} /></td>
-
-            </tr>
+</div>
+      <div className="container-products">
+        {
+          products.map(product => (
+            <div key={product.id}>
+              <CardProduct
+                product={product}
+              />
+              {/* <Link to={`/productDetails/${product.id}`}>
+                {product.title} <br />
+            <img src={product.productImgs[0]} alt="" style={{width:'200px'}} />  
+              </Link> */}
+            </div>
           ))
-          }
-        </tbody>
-      </Table> */}
+        }
+      </div>
 
 
     </div>
