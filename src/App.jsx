@@ -8,6 +8,7 @@ import Purchases from './pages/Purchases'
 import NavBar from './components/NavBar'
 import { useSelector } from 'react-redux'
 import LoadingScreen from './components/LoadingScreen'
+import { Container } from 'react-bootstrap'
 
 function App() {
 
@@ -19,15 +20,15 @@ function App() {
     <HashRouter>
       <NavBar />
 
-      {isLoading && <LoadingScreen/>} {/* si es true muestro la pantalla de carga, sino la saco */}
-
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/productDetails/:id' element={<ProductDetails />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/purchases' element={<Purchases />} />
-      </Routes>
-
+      {isLoading && <LoadingScreen />} {/* si es true muestro la pantalla de carga, sino la saco */}
+      <Container className='my-5'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/productDetails/:id' element={<ProductDetails />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/purchases' element={<Purchases />} />
+        </Routes>
+      </Container>
     </HashRouter>
 
   )

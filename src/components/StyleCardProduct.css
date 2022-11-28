@@ -2,6 +2,7 @@
   width: 1000px;
   position: relative;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -9,10 +10,11 @@
   position: relative;
   cursor: pointer;
   margin: 10px;
+  --bs-card-border-color:transparent;
 }
 
 .container .card .face {
-  width: 350px;
+  width: 335px;
   height: 250px;
   transition: 1s;
   /* border: 1px solid crimson; */
@@ -21,7 +23,7 @@
 .container .card .face.front-face {
   height: 250px;
   position: relative;
-  background: var(--main-bgcolor);
+  background: var(--secondary-bgcolor);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,49 +31,42 @@
 }
 
 .container .card:hover .face.front-face {
-  background-color: var(--tertiary-bgcolor);
+  background-color: var(--secondary-bgcolor);
   transform: translateY(0);
-  
 }
 
 .container .card .face.front-face .content {
-  opacity: 0.2;
+  opacity: 0.85;
   transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container .card:hover .face.front-face .content {
   opacity: 1;
   border: 1px solid green;
-}
-.container .card .face.front-face .content .over{
-  background: transparent;
-  /* opacity: 0; */
-  position: absolute;
-  transition: .8s;
-  border: 1px solid green;
-}
-.container .card .face.front-face .content:hover .over{
-  opacity: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.container .card .face.front-face .content .over{
+  position: absolute;
+  transition: .6s;
+  /* border: 1px solid green; */
+}
+.container .card .face.front-face .content:hover .over{
+  opacity: 1;
 } 
 .container .card .face.front-face .content img{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80%;/* 
-  margin: 0 auto; */
+  height: 95%;
   object-fit: contain;
-  /* top: 0;
-  left: 0;
-  transform: translate(-50%, -50%); */
-  width: 80%;
+  width: 95%;
 }
-/* img {
-  width: 230px;
-  height: 190px;
-} */
+
 
 /* .container .card .face.front-face .content h2 {
   margin: 10px 0 0;
@@ -84,14 +79,14 @@
 .container .card .face.back-face {
   height: 165px;
   position: relative;
-  background: var(--main-bgcolor);
+  background: var(--secondary-bgcolor);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
   box-shadow: var(--main-shadow);
-  /* transform: translateY(-80px); */
+  transform: translateY(-85px);
 }
 
 .container .card:hover .face.back-face {
@@ -108,6 +103,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 8px;
   /* border: 1px solid chartreuse; */
 }
 
@@ -115,6 +111,7 @@
   margin: 0;
   padding: 0;
   font-size: 0.8em;
+  font-weight: 500;
   /* border: 1px solid chartreuse; */
 }
 .product-title{
@@ -126,12 +123,12 @@
   margin: 0;
   font-size: 0.8em;
   display: inline-block;
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
   padding: 5px;
   /*  border: 1px solid crimson; */
 }
 
-.container .card .face.back-face .content p:hover {
+.container .card .face.back-face .content .price {
   background: var(--tertiary-bgcolor);
   color: var(--secondary-text-color);
 }

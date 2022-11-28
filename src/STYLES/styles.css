@@ -4,8 +4,8 @@
   --main-bgcolor: #333;
   --secondary-bgcolor: ghostwhite;
   --tertiary-bgcolor: #ff0057;
-  --main-shadow: 0 10px 30px rgba(0,0,0,0.8);
-  --secondary-shadow: 0 10px 15px rgba(0,0,0, 0.4);
+  --main-shadow: 5px 10px 20px rgba(0,0,0,0.8);
+  --secondary-shadow: 0px 10px 10px rgba(0,0,0, 0.4);
   --add-color: #41d7a7;
   --del-color: crimson;
   --edit-color: yellow;
@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Roboto Mono', monospace ;
 }
 html{
   font-size: 24px;
@@ -26,6 +26,18 @@ body{
   line-height: 1.5;
 }
 
+.title{
+  text-align: center;
+  font-weight: 600;
+  box-shadow: var(--secondary-shadow);
+  margin-bottom: 85px;
+  
+}
+.price:hover {
+  background: var(--tertiary-bgcolor);
+  color: var(--secondary-text-color);
+  box-shadow: var(--secondary-shadow);
+}
 /* ***** Loading ***** */
 .spinner-overlay{
   background: rgba(220,170,50,0.3);
@@ -118,7 +130,30 @@ body{
 }
 
 /* ***** HOME ***** */
-.container-product{
-  display: flex;
-  border: 1px solid greenyellow;
+
+.container-products{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+@media screen and (max-width: 800px) {
+  .container-products{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+p{
+  font-size: 0.8em;
+}
+Link{
+  
+  font-size: 1.8em;
+  font-weight: 600;
+}
+a{
+  text-decoration: none !important;
+}
+.navbar-brand {
+  color: var(--secondary-text-color) !important;
+}
+.nav-link{
+  color: var(--secondary-text-color) !important;
 }

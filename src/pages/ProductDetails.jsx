@@ -5,6 +5,7 @@ import CardDetailInfo from '../components/CardDetailInfo';
 import CardProduct from '../components/CardProduct';
 import { getNewProductThunk } from '../store/slice/productStore.slice';
 
+
 const ProductDetails = () => {
 
   const { id } = useParams()
@@ -18,16 +19,20 @@ const ProductDetails = () => {
   /* para poder traer solo el producto que selecciono */
   const product = newProduct.find(product => product.id === Number(id))
   /* para poder obtener solo productos de la misma categoria y así tener productos relacionados */
-  const relatedProducts = newProduct.filter(newRelatedProduct => newRelatedProduct.category.id === product.category.id)
+  const relatedProducts = newProduct.filter( newRelatedProduct => 
+    newRelatedProduct.category.id === product?.category.id 
+    && newRelatedProduct.id !== product.id
+    )
 
   return (
     <div>
       <h1> Product Details Page</h1>
-      <CardDetailInfo
-        product={product}
-        relatedProducts={relatedProducts}
-      />
-
+      <div>
+        <CardDetailInfo
+          product={product}
+          relatedProducts={relatedProducts}
+        />
+      </div>
     </div>
   );
 };
