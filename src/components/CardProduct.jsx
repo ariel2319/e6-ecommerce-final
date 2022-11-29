@@ -17,23 +17,23 @@ const CardProduct = ({ product }) => {
 
           <div className="face front-face">
             <div className="content">
-              {/* <img src={product?.productImgs[0]} className='over' /> */}
-              <Carousel fade>
+              <img src={product?.productImgs[0]} className='over' /> 
+              {/* <Carousel fade>
                 <Carousel.Item>
                   <img
-                    className="d-block w-100"
+                    className="d-block w-100 over"
                     src={product?.productImgs[0]}
                     alt="First slide"
                   />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
-                    className="d-block w-100"
+                    className="d-block w-100 over"
                     src={product?.productImgs[1]}
                     alt="Second slide"
                   />
                 </Carousel.Item>
-              </Carousel>
+              </Carousel> */}
             </div>
           </div>
 

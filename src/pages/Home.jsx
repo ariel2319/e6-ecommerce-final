@@ -44,7 +44,7 @@ const Home = () => {
                   categoriesList.map(catList => (
                     <div key={catList.id}>
                       <ListGroup.Item style={{ cursor: "pointer" }}
-                        onClick={() => dispatch(filterProductsThunks(catList.id))}> {catList.name} </ListGroup.Item>
+                        onClick={() => dispatch(filterProductsThunks(catList.id))}> <span className='catList'> {catList.name} </span> </ListGroup.Item>
                       <hr />
                     </div>
                   ))
@@ -79,9 +79,10 @@ const Home = () => {
                 onChange={(e) => setInputSearch(e.target.value)}
               />
               <Button
-                onClick={() => dispatch(filterHeadlineThunk(inputSearch))}
+
                 variant="outline-secondary"
-                id="button-addon2">
+                onClick={() => dispatch(filterHeadlineThunk(inputSearch))}
+              >
                 Search
               </Button>
             </InputGroup>

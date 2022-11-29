@@ -1,26 +1,30 @@
-h1{
+h1 {
   font-size: 1.2em;
 }
-.image-container{
+
+.image-container {
+  box-shadow: var(--main-shadow);
+}
+
+.image-content {
   width: 500px;
-  border: 1px solid black;
   border-radius: 4px;
   padding: 25px;
 }
-.image-content{
 
-}
-.image-product{
-  width: 90%;
+.image-product {
+  height: 400px;
   object-fit: contain;
 }
 
-.detail-container{
+.detail-container {
   margin: 12px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-.carousel-control-next-icon, .carousel-control-prev-icon{
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
