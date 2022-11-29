@@ -43,8 +43,8 @@
 }
 
 .container .card:hover .face.front-face .content {
-  opacity: 1;
-  border: 1px solid green;
+  opacity: 1;/* 
+  border: 1px solid green; */
   display: flex;
   justify-content: center;
   align-items: center;

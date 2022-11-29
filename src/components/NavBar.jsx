@@ -10,10 +10,17 @@ const NavBar = () => {
 
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="light">
       <Container >
-        <Navbar.Brand as={Link} to='/' style={{ fontSize: '1.7em', fontWeight: '600' }}> Home </Navbar.Brand> {/* Le da el nombre en el navbar */}
+        {/* <Navbar.Brand as={Link} to='/' style={{ fontSize: '1.7em', fontWeight: '600' }}>
+          Home
+        </Navbar.Brand> */} {/* Le da el nombre en el navbar */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
           <Nav className="me-auto">
+            <Nav.Link
+              as={Link}
+              to='/'
+              style={{ fontSize: '1.4em', fontWeight: '500' }}>  Home
+            </Nav.Link>
             <Nav.Link
               as={Link}
               to='/login'
@@ -24,9 +31,9 @@ const NavBar = () => {
               to='/purchases'
               style={{ fontSize: '1.4em', fontWeight: '500' }}> Purchases
             </Nav.Link>
-            
+
           </Nav>
-        </Navbar.Collapse>
+        {/* </Navbar.Collapse> */}
       </Container>
     </Navbar>
   );
