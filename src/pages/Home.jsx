@@ -51,19 +51,6 @@ const Home = () => {
                 }
               </Accordion.Body>
             </Accordion.Item>
-
-
-            {/* <ListGroup>
-              {
-                categoriesList.map(catList => (
-                  <div key={catList.id}>
-                    <ListGroup.Item style={{ cursor: "pointer" }}
-                      onClick={() => dispatch(filterProductsThunks(catList.id))}> {catList.name} </ListGroup.Item>
-                  </div>
-                ))
-              }
-            </ListGroup> */}
-            {/* </div> */}
           </Accordion>
         </Col>
 
@@ -96,10 +83,6 @@ const Home = () => {
                   <CardProduct
                     product={product}
                   />
-                  {/* <Link to={`/productDetails/${product.id}`}>
-                {product.title} <br />
-            <img src={product.productImgs[0]} alt="" style={{width:'200px'}} />  
-              </Link> */}
                 </div>
               ))
             }

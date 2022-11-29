@@ -65,12 +65,12 @@ const CardDetailInfo = ({ product, relatedProducts }) => {
               {
                 relatedProducts.map(related => (
 
-
+ 
                   <ListGroup.Item key={related.id}>
                     <Link to={`/productDetails/${related.id}`}>
                       {related.title}
                       <br />
-                      <img src={related.productImgs[0]} style={{ width: '150px' }}
+                      <img src={related.productImgs[0]} style={{ height: '150px', objectFit: 'contain' }}
                         alt="" />
                     </Link>
                   </ListGroup.Item>

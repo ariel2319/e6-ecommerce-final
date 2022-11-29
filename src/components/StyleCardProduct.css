@@ -8,7 +8,6 @@
 
 .container .card {
   position: relative;
-  cursor: pointer;
   margin: 10px;
   --bs-card-border-color:transparent;
 }
@@ -66,8 +65,14 @@
   object-fit: contain;
   width: 95%;
 }
-
-
+.car-img-container{
+  width: 250px;
+  height: 250px;
+}
+.car-img{
+  height: 90%;
+  object-fit: contain;
+}
 /* .container .card .face.front-face .content h2 {
   margin: 10px 0 0;
   padding: 0;
