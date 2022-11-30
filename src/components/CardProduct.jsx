@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import React from 'react';
+import React, { useState } from 'react';
 import './StyleCardProduct.css'
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
@@ -7,7 +7,11 @@ import { Carousel } from 'react-bootstrap';
 
 const CardProduct = ({ product }) => {
 
+  const [index, setIndex] = useState(0);
 
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
   return (
     <div className="container">
@@ -18,7 +22,16 @@ const CardProduct = ({ product }) => {
           <div className="face front-face">
             <div className="content">
               {/* <img src={product?.productImgs[0]} className='over' /> */}
-              <Carousel fade>
+
+
+              <Carousel
+                fade
+                interval={2000}
+                activeIndex={index}
+                onSelect={handleSelect}
+                variant="dark"
+                touch={true}
+              >
                 <Carousel.Item className='car-img-container'>
                   <img
                     className="d-block w-100 car-img"
@@ -34,6 +47,8 @@ const CardProduct = ({ product }) => {
                   />
                 </Carousel.Item>
               </Carousel>
+
+
             </div>
           </div>
         </Link>

@@ -14,12 +14,12 @@ const CardDetailInfo = ({ product, relatedProducts }) => {
 
 
           <div className="image-container">
-            <Carousel fade interval={2000}>
+            <Carousel fade interval={2000} variant="dark">
               <Carousel.Item className='image-content'>
                 <img
                   className="d-block w-100 image-product"
                   src={product?.productImgs[0]}
-                  alt="First slide" 
+                  alt="First slide"
                 />
               </Carousel.Item>
               <Carousel.Item className='image-content'>
@@ -65,12 +65,12 @@ const CardDetailInfo = ({ product, relatedProducts }) => {
               {
                 relatedProducts.map(related => (
 
- 
-                  <ListGroup.Item key={related.id}>
+
+                  <ListGroup.Item key={related.id} style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
                     <Link to={`/productDetails/${related.id}`}>
                       {related.title}
                       <br />
-                      <img src={related.productImgs[0]} style={{ height: '150px', objectFit: 'contain' }}
+                      <img src={related.productImgs[0]} style={{ height: '200px', objectFit: 'contain' }}
                         alt="" />
                     </Link>
                   </ListGroup.Item>

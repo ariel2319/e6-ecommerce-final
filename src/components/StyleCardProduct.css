@@ -13,8 +13,8 @@
 }
 
 .container .card .face {
-  width: 335px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   transition: 1s;
   /* border: 1px solid crimson; */
 }
