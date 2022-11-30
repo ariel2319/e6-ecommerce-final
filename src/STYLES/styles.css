@@ -31,7 +31,8 @@ body{
   font-weight: 600;
   box-shadow: var(--secondary-shadow);
   margin-bottom: 85px;
-  
+  padding: 18px;
+  filter: drop-shadow(1px 1px 2px #eb6864);  
 }
 .price:hover {
   background: var(--tertiary-bgcolor);
@@ -147,7 +148,7 @@ body{
   }
 }
 .catList{
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 p{
   font-size: 0.8em;
@@ -165,4 +166,53 @@ a{
 }
 .nav-link{
   color: var(--secondary-text-color) !important;
+}
+
+input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid transparent;
+  box-shadow: var(--secondary-shadow);
+  margin: 15px;
+}
+
+.price-selector-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.from, .to{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+
+.from input, .to input {
+  width: 100px;
+  height: 30px;
+}
+
+.from span, .to span{
+  font-size: 0.8em;
+}
+
+.search-inp{
+  height: 56px;
+}
+.navbar-nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-home{
+  margin-right: 25px;
+  font-size: 1.4em;
+}
+.nav-others{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

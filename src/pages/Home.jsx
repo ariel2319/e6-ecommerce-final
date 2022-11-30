@@ -15,6 +15,13 @@ const Home = () => {
   const dispatch = useDispatch()
   const products = useSelector(state => state.product)
   const [inputSearch, setInputSearch] = useState("")
+  const [priceFrom, setPriceFrom] = useState("")
+  const [priceTo, setPriceTo] = useState("")
+
+  /*  console.log('from: ', priceFrom, ' to: ', priceTo) */
+  const productsPrice = products.slice(priceFrom, priceTo)
+
+
 
   const [categoriesList, setCategoriesList] = useState([])
 
@@ -30,10 +37,49 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className='title'>  TIENDA LA CHICHA </h1>
+      <h1 className='title'> TIENDA LA CHICHA </h1>
       <Row>
         {/* Categories */}
         <Col lg={3} md={7} xs={7}>
+          {/* Prices */}
+          <Accordion defaultActiveKey={['0']} alwaysOpen>
+            {/* <div className="categories-container"> */}
+
+            <Accordion.Item eventKey="0">
+              <Accordion.Header> <b> Price </b></Accordion.Header>
+              <Accordion.Body className='price-selector-container'>
+                <div className="from">
+                  <span>
+                    From
+                  </span>
+
+                  <input
+                    type="number"
+                    min={'0'}
+                    max={'5000'}
+                    value={priceFrom}
+                    onChange={(e) => setPriceFrom(e.target.value)}
+                  />
+                </div>
+
+                <div className="to" >
+                  <span>
+                    To
+                  </span>
+                  <input
+                    type="number"
+                    min={priceFrom}
+                    max={'5001'}
+                    value={priceTo}
+                    onChange={(e) => setPriceTo(e.target.value)}
+                  />
+                </div>
+
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+
+          {/* Categorys */}
           <Accordion defaultActiveKey={['0']} alwaysOpen>
             {/* <div className="categories-container"> */}
 
@@ -59,6 +105,7 @@ const Home = () => {
           <div className="search-container">
             <InputGroup className="mb-3">
               <Form.Control
+                className='search-inp'
                 placeholder="Product´s name"
                 aria-label="Product´s name"
                 aria-describedby="basic-addon2"
@@ -66,7 +113,7 @@ const Home = () => {
                 onChange={(e) => setInputSearch(e.target.value)}
               />
               <Button
-
+                style={{ boxShadow: 'var(--secondary-shadow)' }}
                 variant="outline-secondary"
                 onClick={() => dispatch(filterHeadlineThunk(inputSearch))}
               >
@@ -78,7 +125,10 @@ const Home = () => {
 
           <div className="container-products">
             {
+
               products.map(product => (
+                /* productsPrice.map(product => ( */
+
                 <div key={product.id}>
                   <CardProduct
                     product={product}

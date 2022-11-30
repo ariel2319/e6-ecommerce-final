@@ -1,13 +1,16 @@
 import Button from 'react-bootstrap/Button';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './StyleCardProduct.css'
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { getCartThunk } from '../store/slice/cart.slice';
 
 
 const CardProduct = ({ product }) => {
 
   const [index, setIndex] = useState(0);
+
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
@@ -62,7 +65,9 @@ const CardProduct = ({ product }) => {
                 <p className='price'> ${product?.price} </p>
               </div>
               <div className="btn-container">
-                <button className='btn-add'>
+                <button
+                  className='btn-add'
+                >
                   <i className="fa-solid fa-cart-plus"></i>
                 </button>
               </div>

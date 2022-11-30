@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Carousel, Col, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './StyleCardDetailInfo.css'
 
 const CardDetailInfo = ({ product, relatedProducts }) => {
+
+  const [amount, setAmount] = useState("")
+
+  const addToCart = () => {
+    const products = {
+      id: product.id,
+      quantity: amount,
+    }
+    console.log(products)
+  }
+
+
 
   return (
     <div>
@@ -43,9 +55,17 @@ const CardDetailInfo = ({ product, relatedProducts }) => {
 
           <div className="detail-container">
             <p> <b> Price: </b> <span className='price'> ${product?.price} </span></p>
-            <p> <b> Quantity: "X" </b></p>
+            <p> <b> Quantity:  </b></p>
+            <input
+              type="text"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+            />
             <div className="btn-container">
-              <button className='btn-add'>
+              <button
+                className='btn-add'
+                onClick={addToCart}
+              >
                 <i className="fa-solid fa-cart-plus"></i>
               </button>
             </div>
