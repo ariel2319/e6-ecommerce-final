@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingScreen from '../components/LoadingScreen';
-import { filterHeadlineThunk, filterProductsThunks, getNewProductThunk } from '../store/slice/productStore.slice';
+import { filterHeadlineThunk, filterPrice, filterProductsThunks, getNewProductThunk } from '../store/slice/productStore.slice';
 import CardProduct from '../components/CardProduct';
 import '../STYLES/styles.css'
 import axios from 'axios';
@@ -57,10 +57,9 @@ const Home = () => {
                   <input
                     type="number"
                     min={'0'}
-                    max={'5000'}
                     value={priceFrom}
-                    disabled
-                    title='In Maintenance'
+                    /* disabled */
+                    /* title='In Maintenance' */
                     onChange={(e) => setPriceFrom(e.target.value)}
                   />
                 </div>
@@ -71,14 +70,16 @@ const Home = () => {
                   </span>
                   <input
                     type="number"
-                    min={priceFrom}
-                    max={'5001'}
+                    min={'0'}
                     value={priceTo}
-                    disabled
-                    title='In Maintenance'
+                    /* disabled */
+                    /* title='In Maintenance' */
                     onChange={(e) => setPriceTo(e.target.value)}
                   />
                 </div>
+                <Button onClick={()=> dispatch(filterPrice({priceFrom, priceTo}))}>
+                  submit
+                </Button>
 
               </Accordion.Body>
             </Accordion.Item>

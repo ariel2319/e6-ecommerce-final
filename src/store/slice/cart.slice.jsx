@@ -39,7 +39,8 @@ export const createCartThunk = (product) => (dispatch) => {
 export const deleteCartThunk = (id) => (dispatch) => {
   dispatch(setIsLoading(true));
   return axios
-    .delete(`https://e-commerce-api.academlo.tech/api/v1/cart/${id}`)
+    .delete(`https://e-commerce-api.academlo.tech/api/v1/cart/${id}`,
+      getConfig())
     .then((res) => dispatch(getCartThunk()))
     .catch((error) => console.log(error.response?.data))
     .finally(() => dispatch(setIsLoading(false)));
