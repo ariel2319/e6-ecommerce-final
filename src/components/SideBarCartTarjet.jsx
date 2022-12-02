@@ -40,10 +40,10 @@ const SideBarCartTarjet = ({ cartIto }) => {
 
       <div className='cart-total-price'>
         <span>
-          Total:
+          Sub Total:
         </span>
         <b>
-          ${cartIto.price}
+          ${cartIto.price * cartIto.productsInCart.quantity}
         </b>
       </div>
     </div>

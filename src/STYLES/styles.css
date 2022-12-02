@@ -19,6 +19,7 @@
 }
 html{
   font-size: 24px;
+  height: 100vh;
 }
 body{
   background-color: #3f3f3f;
@@ -232,4 +233,12 @@ input {
   border: transparent;
   border-radius: 6px;
   box-shadow: var(--main-shadow);
+}
+
+.foot-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  color: var(--main-text-color);
+  background: var(--bs-primary);
 }

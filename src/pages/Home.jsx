@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { Accordion, Col, ListGroup, Row } from 'react-bootstrap';
+import ByArry from '../components/ByArry';
 
 const Home = () => {
 
@@ -32,7 +33,7 @@ const Home = () => {
       .get(`https://e-commerce-api.academlo.tech/api/v1/products/categories`)
       .then(res => setCategoriesList(res.data.data.categories))
   }, [])
- /* console.log('list cat', categoriesList)  */
+  /* console.log('list cat', categoriesList)  */
 
 
   return (
@@ -45,7 +46,7 @@ const Home = () => {
           <Accordion defaultActiveKey={['0']} alwaysOpen>
             {/* <div className="categories-container"> */}
 
-            <Accordion.Item eventKey="0">
+            <Accordion.Item eventKey="1" title='In Maintenance'>
               <Accordion.Header> <b> Price </b></Accordion.Header>
               <Accordion.Body className='price-selector-container'>
                 <div className="from">
@@ -58,6 +59,8 @@ const Home = () => {
                     min={'0'}
                     max={'5000'}
                     value={priceFrom}
+                    disabled
+                    title='In Maintenance'
                     onChange={(e) => setPriceFrom(e.target.value)}
                   />
                 </div>
@@ -71,6 +74,8 @@ const Home = () => {
                     min={priceFrom}
                     max={'5001'}
                     value={priceTo}
+                    disabled
+                    title='In Maintenance'
                     onChange={(e) => setPriceTo(e.target.value)}
                   />
                 </div>
@@ -139,10 +144,6 @@ const Home = () => {
           </div>
         </Col>
       </Row>
-
-
-
-
 
     </div>
   );

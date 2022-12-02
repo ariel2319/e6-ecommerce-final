@@ -35,9 +35,13 @@ const CardProduct = ({ product }) => {
 
           <div className="face front-face">
             <div className="content">
-
-              
-              <Carousel
+              <div className='car-img-container'>
+                <img
+                  className="car-img"
+                  src={product?.productImgs[0]}
+                />
+              </div>
+              {/* <Carousel
                 fade
                 interval={2000}
                 activeIndex={index}
@@ -59,7 +63,7 @@ const CardProduct = ({ product }) => {
                     alt="Second slide"
                   />
                 </Carousel.Item>
-              </Carousel>
+              </Carousel> */}
 
             </div>
           </div>

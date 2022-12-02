@@ -16,7 +16,7 @@ const CardDetailInfo = ({ product, relatedProducts }) => {
       id: product.id,
       quantity: amount,
     }
-    console.log(products)
+    /* console.log(products) */
     dispatch(createCartThunk(products))
   }
 

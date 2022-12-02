@@ -29,7 +29,7 @@ const NavBar = () => {
               <Nav.Link
                 as={Link}
                 to='/'
-                style={{ fontSize: '1.4em', fontWeight: '500' }}> <b> La Chicha </b>
+                style={{ fontSize: '1.5em', fontWeight: '600' }}> <b> La Chicha </b>
               </Nav.Link>
             </div>
             <div className='nav-others'>
@@ -37,7 +37,7 @@ const NavBar = () => {
                 title='Login'
                 as={Link}
                 to='/login'
-                style={{ fontSize: '1.4em', fontWeight: '500' }}>
+                style={{margin: '12px' }}>
                 <i className="fa-solid fa-user"></i>
               </Nav.Link>
 
@@ -45,14 +45,15 @@ const NavBar = () => {
                 title='Purchases'
                 as={Link}
                 to='/purchases'
-                style={{ fontSize: '1.4em', fontWeight: '500' }}>
+                style={{margin: '12px' }}>
                 <i className="fa-solid fa-box-archive"></i>
               </Nav.Link>
 
               <Nav.Link
                 title='Cart'
                 as={Link}
-                style={{ fontSize: '1.4em', fontWeight: '500' }} onClick={handleShow} >
+                style={{margin: '12px' }}
+                onClick={handleShow} >
                 <i className="fa-solid fa-cart-shopping"></i>
               </Nav.Link>
             </div>

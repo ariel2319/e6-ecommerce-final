@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux'
 import LoadingScreen from './components/LoadingScreen'
 import { Container } from 'react-bootstrap'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import ByArry from './components/ByArry'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
 
         </Routes>
       </Container>
+      <ByArry/>
     </HashRouter>
 
   )
