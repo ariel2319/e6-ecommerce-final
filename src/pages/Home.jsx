@@ -32,7 +32,7 @@ const Home = () => {
       .get(`https://e-commerce-api.academlo.tech/api/v1/products/categories`)
       .then(res => setCategoriesList(res.data.data.categories))
   }, [])
-  /* console.log('list cat', categoriesList) */
+ /* console.log('list cat', categoriesList)  */
 
 
   return (

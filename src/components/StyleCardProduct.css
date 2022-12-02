@@ -133,10 +133,11 @@
   /*  border: 1px solid crimson; */
 }
 
-.container .card .face.back-face .content .price {
+.price {
   background: var(--tertiary-bgcolor);
   color: var(--secondary-text-color);
 }
+
 
 .btn-container {
   display: flex;

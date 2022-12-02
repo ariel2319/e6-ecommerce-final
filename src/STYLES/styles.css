@@ -216,3 +216,20 @@ input {
   justify-content: flex-end;
   align-items: center;
 }
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container{
+  margin-top: 25%;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: transparent;
+  border-radius: 6px;
+  box-shadow: var(--main-shadow);
+}

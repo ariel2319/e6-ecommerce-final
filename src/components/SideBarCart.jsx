@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCartThunk } from '../store/slice/cart.slice';
+import { checkOutCartThunk, getCartThunk } from '../store/slice/cart.slice';
 import SideBarCartTarjet from './SideBarCartTarjet';
 
 const SideBarCart = ({ show, handleClose }) => {
@@ -37,6 +37,9 @@ const SideBarCart = ({ show, handleClose }) => {
           }
 
           <div>Total: </div>
+          <Button onClick={()=>dispatch(checkOutCartThunk())}>
+            Checkout
+          </Button>
         </Offcanvas.Body>
       </Offcanvas>
     </div>

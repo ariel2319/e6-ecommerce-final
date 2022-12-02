@@ -9,6 +9,13 @@ const Purchases = () => {
 
   const purchases = useSelector(state => state.purchases)
 
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'short' }
+
+  const date = (time) => {
+    const newDate = new Date(time)
+    return newDate
+  }
+
   useEffect(() => {
     dispatch(getPurchasesThunk())
   }, [])
@@ -21,7 +28,8 @@ const Purchases = () => {
           purchases.map(purchase => (
             <li key={purchase.id}>
               {purchase.createdAt}
-
+              {/* { date(purchase.createdAt) } */}
+              
               {
                 purchase.cart.products.map(product => (
                   <div key={product.id}>
@@ -30,17 +38,14 @@ const Purchases = () => {
                     </Link>
                   </div>
                 ))
-
               }
 
+              <br />
             </li>
-
           ))
         }
         <hr />
-
       </ul>
-
 
     </div>
   );

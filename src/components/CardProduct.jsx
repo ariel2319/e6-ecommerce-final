@@ -4,17 +4,28 @@ import './StyleCardProduct.css'
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { getCartThunk } from '../store/slice/cart.slice';
+import { createCartThunk, getCartThunk } from '../store/slice/cart.slice';
 
 
 const CardProduct = ({ product }) => {
 
   const [index, setIndex] = useState(0);
 
+  const dispatch = useDispatch()
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+  const addToCart = () => {
+    const products = {
+      id: product.id,
+      quantity: 1,
+    }
+    /* console.log(products) */
+    dispatch(createCartThunk(products))
+  }
+
 
   return (
     <div className="container">
@@ -24,9 +35,8 @@ const CardProduct = ({ product }) => {
 
           <div className="face front-face">
             <div className="content">
-              {/* <img src={product?.productImgs[0]} className='over' /> */}
 
-
+              
               <Carousel
                 fade
                 interval={2000}
@@ -51,7 +61,6 @@ const CardProduct = ({ product }) => {
                 </Carousel.Item>
               </Carousel>
 
-
             </div>
           </div>
         </Link>
@@ -67,6 +76,7 @@ const CardProduct = ({ product }) => {
               <div className="btn-container">
                 <button
                   className='btn-add'
+                  onClick={addToCart}
                 >
                   <i className="fa-solid fa-cart-plus"></i>
                 </button>

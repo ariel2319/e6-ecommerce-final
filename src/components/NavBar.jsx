@@ -38,7 +38,7 @@ const NavBar = () => {
                 as={Link}
                 to='/login'
                 style={{ fontSize: '1.4em', fontWeight: '500' }}>
-                <i class="fa-solid fa-user"></i>
+                <i className="fa-solid fa-user"></i>
               </Nav.Link>
 
               <Nav.Link
@@ -46,14 +46,14 @@ const NavBar = () => {
                 as={Link}
                 to='/purchases'
                 style={{ fontSize: '1.4em', fontWeight: '500' }}>
-                <i class="fa-solid fa-box-archive"></i>
+                <i className="fa-solid fa-box-archive"></i>
               </Nav.Link>
 
               <Nav.Link
                 title='Cart'
                 as={Link}
                 style={{ fontSize: '1.4em', fontWeight: '500' }} onClick={handleShow} >
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i className="fa-solid fa-cart-shopping"></i>
               </Nav.Link>
             </div>
           </Nav>

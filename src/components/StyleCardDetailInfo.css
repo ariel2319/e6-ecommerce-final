@@ -17,14 +17,15 @@ h1 {
   object-fit: contain;
 }
 
-.detail-container {
-  margin: 12px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.detail-container { 
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.carousel-control-next-icon,
+/* .carousel-control-next-icon,
 .carousel-control-prev-icon {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-}
+} */
