@@ -77,6 +77,7 @@ const CardDetailInfo = ({ product, relatedProducts }) => {
                 <input
                   style={{ width: '60px' }}
                   type="number"
+                  min={0}
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                 />

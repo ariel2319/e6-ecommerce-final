@@ -32,15 +32,17 @@ export const createCartThunk = (product) => (dispatch) => {
       product,
       getConfig())
     .then((res) => dispatch(getCartThunk()))
-    .finally(() => dispatch(setIsLoading(false)));
+    .catch((error) => console.log(error.response?.data))
+    .finally(() => dispatch(setIsLoading(false)))
 }
 
-export const deleteCartThunk = () => (dispatch) => {
-    dispatch(setIsLoading(true));
-    return axios
-        .delete(`https://e-commerce-api.academlo.tech/api/v1/cart/1`)
-        .then((res) => dispatch(getCartThunk()))
-        .finally(() => dispatch(setIsLoading(false)));
+export const deleteCartThunk = (id) => (dispatch) => {
+  dispatch(setIsLoading(true));
+  return axios
+    .delete(`https://e-commerce-api.academlo.tech/api/v1/cart/${id}`)
+    .then((res) => dispatch(getCartThunk()))
+    .catch((error) => console.log(error.response?.data))
+    .finally(() => dispatch(setIsLoading(false)));
 }
 
 export const checkOutCartThunk = () => (dispatch) => {

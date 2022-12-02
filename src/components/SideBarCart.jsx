@@ -7,6 +7,8 @@ import SideBarCartTarjet from './SideBarCartTarjet';
 
 const SideBarCart = ({ show, handleClose }) => {
 
+  const [totalPrice, setTotalPrice] = useState(0);
+
   const dispatch = useDispatch();
 
   const cartProduct = useSelector(state => state.cart)
@@ -14,6 +16,15 @@ const SideBarCart = ({ show, handleClose }) => {
   useEffect(() => {
     dispatch(getCartThunk())
   }, [])
+
+
+useEffect(()=>{
+  let total = 0;
+  cartProduct.forEach((product) => {
+    total += product.price * product.productsInCart.quantity;
+  });
+  setTotalPrice(total);
+},[cartProduct])
 
 
   return (
@@ -36,8 +47,8 @@ const SideBarCart = ({ show, handleClose }) => {
           ))
           }
 
-          <div>Total: </div>
-          <Button onClick={()=>dispatch(checkOutCartThunk())}>
+          <div>Total: ${totalPrice}</div>
+          <Button onClick={() => dispatch(checkOutCartThunk())}>
             Checkout
           </Button>
         </Offcanvas.Body>
