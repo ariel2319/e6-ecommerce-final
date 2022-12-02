@@ -9,9 +9,9 @@ const SideBarCartTarjet = ({ cartIto }) => {
 
   const dispatch = useDispatch()
 
-  const deleteToCart = (id) => {
+  const deleteToCart = () => {
     alert('borrandooo')
-    dispatch(deleteCartThunk(id))
+    dispatch(deleteCartThunk(cartIto.id))
   }
 
   return (
